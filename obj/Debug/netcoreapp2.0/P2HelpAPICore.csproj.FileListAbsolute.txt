@@ -1,0 +1,11 @@
+C:\projects\Faculdade\P2HelpAPICore\P2HelpAPICore\P2HelpAPICore\bin\Debug\netcoreapp2.0\P2HelpAPICore.deps.json
+C:\projects\Faculdade\P2HelpAPICore\P2HelpAPICore\P2HelpAPICore\bin\Debug\netcoreapp2.0\P2HelpAPICore.runtimeconfig.json
+C:\projects\Faculdade\P2HelpAPICore\P2HelpAPICore\P2HelpAPICore\bin\Debug\netcoreapp2.0\P2HelpAPICore.runtimeconfig.dev.json
+C:\projects\Faculdade\P2HelpAPICore\P2HelpAPICore\P2HelpAPICore\bin\Debug\netcoreapp2.0\P2HelpAPICore.dll
+C:\projects\Faculdade\P2HelpAPICore\P2HelpAPICore\P2HelpAPICore\bin\Debug\netcoreapp2.0\P2HelpAPICore.pdb
+C:\projects\Faculdade\P2HelpAPICore\P2HelpAPICore\P2HelpAPICore\obj\Debug\netcoreapp2.0\P2HelpAPICore.csprojResolveAssemblyReference.cache
+C:\projects\Faculdade\P2HelpAPICore\P2HelpAPICore\P2HelpAPICore\obj\Debug\netcoreapp2.0\P2HelpAPICore.csproj.CoreCompileInputs.cache
+C:\projects\Faculdade\P2HelpAPICore\P2HelpAPICore\P2HelpAPICore\obj\Debug\netcoreapp2.0\P2HelpAPICore.AssemblyInfoInputs.cache
+C:\projects\Faculdade\P2HelpAPICore\P2HelpAPICore\P2HelpAPICore\obj\Debug\netcoreapp2.0\P2HelpAPICore.AssemblyInfo.cs
+C:\projects\Faculdade\P2HelpAPICore\P2HelpAPICore\P2HelpAPICore\obj\Debug\netcoreapp2.0\P2HelpAPICore.dll
+C:\projects\Faculdade\P2HelpAPICore\P2HelpAPICore\P2HelpAPICore\obj\Debug\netcoreapp2.0\P2HelpAPICore.pdb
