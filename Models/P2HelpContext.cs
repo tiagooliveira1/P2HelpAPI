@@ -19,6 +19,7 @@ namespace P2HelpAPICore.Models
 
         }
         public DbSet<Categoria> Categoria { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -29,7 +30,8 @@ namespace P2HelpAPICore.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Categoria>().ToTable("Categoria");
-            
+            modelBuilder.Entity<Usuario>().ToTable("Usuario");
+
         }
     }
 }

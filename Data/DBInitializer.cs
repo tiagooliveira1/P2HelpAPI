@@ -30,6 +30,25 @@ namespace P2HelpAPICore.Data
 
             context.SaveChanges();
 
+            if (context.Usuario.Any())
+            {
+                return;   // DB has been seeded
+            }
+            var usuarios = new Usuario[]
+            {
+                new Usuario{ Nome="Tiago", Login="1", Pass="1", HashAuth = Guid.NewGuid().ToString()},
+                new Usuario{ Nome="Henrique", Login="2", Pass="2", HashAuth = Guid.NewGuid().ToString()},
+                new Usuario{ Nome="Jose", Login="3", Pass="3", HashAuth = Guid.NewGuid().ToString()},
+
+            };
+
+            foreach (Usuario u in usuarios)
+            {
+                context.Usuario.Add(u);
+            }
+
+            context.SaveChanges();
+
         }
     }
 }
