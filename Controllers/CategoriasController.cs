@@ -6,11 +6,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using P2HelpAPICore.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace P2HelpAPICore.Controllers
 {
     [Produces("application/json")]
     [Route("api/Categorias")]
+    [Authorize()]
+
     public class CategoriasController : Controller
     {
         private readonly P2HelpContext _context;

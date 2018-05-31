@@ -23,4 +23,11 @@ namespace P2HelpAPICore.Models
         public string Login { get; set; }
         public string Pass { get; set; }
     }
+
+    public class TokenConfigurations
+    {
+        public string Audience { get; set; }
+        public string Issuer { get; set; }
+        public int Seconds { get; set; }
+    }
 }
