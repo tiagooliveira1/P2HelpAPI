@@ -10,5 +10,6 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>P2HelpAPICore.Models.P2HelpContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
+    <NameOfLastUsedPublishProfile>P2HelpAPICore - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

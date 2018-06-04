@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using P2HelpAPICore.Models;
 
 namespace P2HelpAPICore.Models
 {
@@ -20,6 +21,7 @@ namespace P2HelpAPICore.Models
         }
         public DbSet<Categoria> Categoria { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Municipio> Municipio { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -31,7 +33,10 @@ namespace P2HelpAPICore.Models
         {
             modelBuilder.Entity<Categoria>().ToTable("Categoria");
             modelBuilder.Entity<Usuario>().ToTable("Usuario");
+            modelBuilder.Entity<Municipio>().ToTable("Municipio");
 
         }
+
+        public DbSet<P2HelpAPICore.Models.Sistema> Sistema { get; set; }
     }
 }
