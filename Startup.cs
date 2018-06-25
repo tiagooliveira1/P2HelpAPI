@@ -75,6 +75,7 @@ namespace P2HelpAPICore
             }
 
             app.UseAuthentication();
+            app.UseStaticFiles(); // pra funcionar o bootstrap e jquery.
             app.UseMvc();
         }
     }

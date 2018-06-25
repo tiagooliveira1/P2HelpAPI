@@ -1,0 +1,83 @@
+﻿@model IEnumerable<P2HelpAPICore.Models.Categoria>
+
+@{
+    ViewData["Title"] = "Categorias de Ofertas";
+}
+<link rel="stylesheet" href="~/lib/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/lib/css/p2help-custom.css" />
+
+
+
+<navbar class="navbar navbar-expand-lg  navbar-p2help"  >
+    <a class="navbar-brand" href="#" >
+    
+      <img src="~/lib/images/logo1-transp.png" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Categorias <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="divisor">|</li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Ofertas minhas Horas</a>
+            </li>
+            <li class="divisor">|</li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Minhas Contratações</a>
+            </li>
+           
+            
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+    </div>
+
+</navbar>
+
+<h2>Categoria de Ofertas</h2>
+
+<p>
+    <a href="/Categorias/Create"  class="btn btn-primary">Nova categoria</a>
+  
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descricao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoriaMae)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoriaMae)
+            </td>
+            <td>
+                
+                <a href="/Categorias/Edit/@item.Id">Editar</a>|
+                <a href="/Categorias/Details/@item.Id">Detalhes</a>|
+                <a href="/Categorias/Delete/@item.Id">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<script src="~/lib/js/jquery-3.3.1.min.js"></script>
+<script src="~/lib/js/bootstrap.bundle.min.js"></script>
