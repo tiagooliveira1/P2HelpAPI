@@ -8,6 +8,11 @@ namespace P2HelpAPICore.Models
 {
     public class Usuario
     {
+        /*public Usuario()
+        {
+            this.Permissoes = new HashSet<Permissao>();
+        }*/
+
         [Key]
         public int Id { get; set; }
         public string Nome { get; set; }
@@ -22,6 +27,9 @@ namespace P2HelpAPICore.Models
 
         public string Login { get; set; }
         public string Pass { get; set; }
+        public string PerfilAcesso { get; set; }
+
+        public virtual ICollection<Permissao> Permissoes { get; set; }
     }
 
     public class TokenConfigurations

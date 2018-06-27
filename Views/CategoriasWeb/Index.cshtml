@@ -72,7 +72,7 @@
                 
                 <a href="/Categorias/Edit/@item.Id">Editar</a>|
                 <a href="/Categorias/Details/@item.Id">Detalhes</a>|
-                <a href="/Categorias/Delete/@item.Id">Excluir</a>
+                <a href="#" onclick="excluirCategoria('@item.Descricao', @item.Id); return false;">Excluir</a>
             </td>
         </tr>
 }
@@ -81,3 +81,4 @@
 
 <script src="~/lib/js/jquery-3.3.1.min.js"></script>
 <script src="~/lib/js/bootstrap.bundle.min.js"></script>
+<script src="~/lib/js/scripts.marotos.js"></script>

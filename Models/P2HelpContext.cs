@@ -22,6 +22,9 @@ namespace P2HelpAPICore.Models
         public DbSet<Categoria> Categoria { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Municipio> Municipio { get; set; }
+        public DbSet<Role> Role { get; set; }
+        public DbSet<Sistema> Sistema { get; set; }
+        public DbSet<Permissao> Permissao { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,11 +35,29 @@ namespace P2HelpAPICore.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Categoria>().ToTable("Categoria");
-            modelBuilder.Entity<Usuario>().ToTable("Usuario");
+            modelBuilder.Entity<Usuario>()
+                .ToTable("Usuario")
+                .HasMany(c => c.Permissoes)
+                .WithOne(p => p.UsuarioRole);
+
             modelBuilder.Entity<Municipio>().ToTable("Municipio");
+            modelBuilder.Entity<Role>().ToTable("Role");
+            modelBuilder.Entity<Sistema>().ToTable("Sistema");
+            modelBuilder.Entity<Permissao>()
+                .ToTable("Permissao")
+                .HasOne(c => c.UsuarioRole)
+                .WithMany(u => u.Permissoes);
+            /*.HasKey(c => new { c.IdRole, c.UsuarioRole } );*/
+
+
+
+            /*modelBuilder.Entity<Usuario>()primary key, use fluent API.
+                .HasMany(u => u.Roles)
+                .WithMany(u => u.Usuarios)
+                .Map(); */
 
         }
 
-        public DbSet<P2HelpAPICore.Models.Sistema> Sistema { get; set; }
+
     }
 }

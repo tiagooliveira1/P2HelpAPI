@@ -17,23 +17,30 @@ namespace P2HelpAPICore.Controllers
     public class TokenController : Controller
     {
         private readonly IConfiguration _configuration;
+        private readonly P2HelpContext _context;
 
-        public TokenController(IConfiguration configuration)
+        public TokenController(IConfiguration configuration, P2HelpContext context)
         {
             // injeta o configuration para pegar a chave definida me appsetings
             _configuration = configuration;
+            // injeta o context para conseguir acessar a model usuario e verificar usuario e senha
+            _context = context;
         }
 
         [AllowAnonymous]
         [HttpPost]
         public IActionResult RequestToken([FromBody] Usuario request)
         {
-            if(request.Login == "1" && request.Pass == "1")
+            // se any retornar true, filtrando por usuario e senha passados 
+            if(_context.Usuario.Any(e => (e.Login == request.Login) && (e.Pass == request.Pass))) //request.Login == "1" && request.Pass == "1")
             {
+                Usuario usuario = _context.Usuario
+                    .Where(e => e.Login == request.Login )
+                    .FirstOrDefault();
                 var claims = new[]
                 {
-                    new Claim(ClaimTypes.Name, "Tiago"),
-                    new Claim(ClaimTypes.Role, "usuario_normal")
+                    new Claim(ClaimTypes.Name, usuario.Nome),
+                    new Claim(ClaimTypes.Role, usuario.PerfilAcesso)
                 };
 
                 // recebe uma instancia de SymmetricSecurityKey 

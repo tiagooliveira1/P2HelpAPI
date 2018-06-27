@@ -30,24 +30,49 @@ namespace P2HelpAPICore.Data
 
             context.SaveChanges();
 
+           
+
+            var roles = new Role[]
+            {
+                new Role{ Nome="Admin"},
+                new Role{ Nome="SimplesMortal"},
+            };
+
+            foreach (Role r in roles)
+            {
+                context.Role.Add(r);
+            }
+
+            context.SaveChanges();
+
+
             if (context.Usuario.Any())
             {
                 return;   // DB has been seeded
             }
+
+           
             var usuarios = new Usuario[]
             {
-                new Usuario{ Nome="Tiago", Login="1", Pass="1", HashAuth = Guid.NewGuid().ToString()},
-                new Usuario{ Nome="Henrique", Login="2", Pass="2", HashAuth = Guid.NewGuid().ToString()},
-                new Usuario{ Nome="Jose", Login="3", Pass="3", HashAuth = Guid.NewGuid().ToString()},
+                
+                new Usuario{ Nome="Tiago", Login="1", Pass="1", HashAuth = Guid.NewGuid().ToString(), PerfilAcesso = "Admin" },
+                new Usuario{ Nome="Henrique", Login="2", Pass="2", HashAuth = Guid.NewGuid().ToString(), PerfilAcesso = "SimplesMortal" },
+                new Usuario{ Nome="Jose", Login="3", Pass="3", HashAuth = Guid.NewGuid().ToString(), PerfilAcesso = "SimplesMortal" },
 
             };
-
+            
             foreach (Usuario u in usuarios)
             {
+                //u.Permissoes.Add(new Permissao  { UsuarioRole = u, RoleUsuario = role });
                 context.Usuario.Add(u);
+                
             }
 
             context.SaveChanges();
+
+         
+
+            
 
 
             /* Popula municipios */

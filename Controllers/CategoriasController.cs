@@ -12,7 +12,7 @@ namespace P2HelpAPICore.Controllers
 {
     [Produces("application/json")]
     [Route("api/Categorias")]
-    [Authorize()]
+    [Authorize(Roles= "SimplesMortal, Admin")]
 
     public class CategoriasController : Controller
     {

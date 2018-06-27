@@ -122,6 +122,7 @@ namespace P2HelpAPICore.Controllers
         }
 
         // GET: CategoriasWeb/Delete/5
+        [HttpGet("{id}")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -143,6 +144,16 @@ namespace P2HelpAPICore.Controllers
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var categoria = await _context.Categoria.SingleOrDefaultAsync(m => m.Id == id);
+            _context.Categoria.Remove(categoria);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        // POST: CategoriasWeb/Delete/5
+        [HttpPost]
+        public async Task<IActionResult> DeleteViaAjax(int id)
         {
             var categoria = await _context.Categoria.SingleOrDefaultAsync(m => m.Id == id);
             _context.Categoria.Remove(categoria);
